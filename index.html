@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Up and above</title>
+	<link rel="icon" type="image/png" href="static/img/favicon.png" />
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.epic.css">
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="static/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="static/css/leaflet.css">
+	<link rel="stylesheet" type="text/css" href="static/css/leaflet-control-condensed-attribution.css">
+	<link rel="stylesheet" type="text/css" href="static/css/leaflet-beautify-marker-icon.css">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+	<script type="text/javascript" src="static/js/vendor/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="static/js/vendor/pouchdb-7.0.0.min.js"></script>
+	<script type="text/javascript" src="static/js/vendor/popper.min.js"></script>
+	<script type="text/javascript" src="static/js/vendor/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+	<script type="text/javascript" src="static/js/vendor/chart.js"></script>
+	<script type="text/javascript" src="static/js/vendor/leaflet-src.js"></script>
+	<script type="text/javascript" src="static/js/vendor/leaflet-providers.js"></script>
+	<script type="text/javascript" src="static/js/vendor/leaflet-control-condensed-attribution.js"></script>
+	<script type="text/javascript" src="static/js/vendor/leaflet-beautify-marker-icon.js"></script>
+	<script type="text/javascript" src="static/js/vendor/L.TileLayer.PouchDBCached.js"></script>
+	<script type="text/javascript" src="static/js/vendor/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+</head>
+<body>
+
+	<!-- NAVBAR -->
+	<nav class="navbar navbar-expand-md navbar-dark bg-transparent" id="navbar">
+		<a class="navbar-brand" href="#">
+			<img src="static/img/logo.png" class="d-inline-block align-top" alt="">
+			Up and above
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item" id="product-link">
+					<a class="nav-link" href="#">Products</a>
+				</li>
+				<li class="nav-item" id="charts-link">
+					<a class="nav-link" href="#">Statistics</a>
+				</li>
+				<li class="nav-item" id="maps-link">
+					<a class="nav-link" href="#">Our stores</a>
+				</li>
+				<li class="nav-item" id="contact-link">
+					<a class="nav-link" href="#">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<!-- HEADER -->
+		<div class="row justify-content-center" id="header">
+			<div class="col-11 col-md-6 col-lg-5 d-md-flex align-items-center">
+				<span>
+					<h1>Made for <span id="typed"></span></h1>
+					<p>Eleifend justo eros senectus phasellus morbi conubia suspendisse dictum dignissim, tellus molestie erat placerat bibendum vehicula quis pharetra proin mattis, est volutpat euismod platea.</p>
+					<a class="btn btn-primary btn-lg" id="discover">Discover more</a>
+				</span>
+			</div>
+			<div class="col-11 col-md-6 col-lg-5 d-md-flex align-items-center animated start-animation" data-anim="zoomIn">
+				<div class="polaroid">
+					<div class="polaroid-img">
+						<img src="static/img/bg.jpg" class="img-fluid">
+					</div>
+					<div class="polaroid-container">
+						Lorem ipsum dolor sit amet
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- PRODUCT -->
+		<div class="row justify-content-center" id="product">
+			<div class="col-12 col-lg-5 text-center d-lg-flex align-items-center animated start-animation" data-anim="fadeInLeft">
+				<img src="static/img/product.png" class="img-fluid">
+			</div>
+			<div class="col-12 col-lg-5 animated start-animation" data-anim="fadeInRight">
+				<h2>Meet the product</h2>
+				<p>
+					Ullamcorper molestie suscipit tempor in quisque class eleifend facilisis tempus egestas potenti erat ultricies commodo morbi, sed nec nam orci vivamus interdum nascetur nibh netus cubilia felis rhoncus bibendum. Dictum ornare bibendum montes mi pretium iaculis turpis eleifend ad praesent blandit, at lacus potenti quis himenaeos integer pellentesque cras aliquet laoreet.
+				</p>
+
+				<div class="row" id="product-features">
+					<div class="col">
+						<i class="fas fa-desktop"></i>
+						<p>
+							Mollis primis turpis ante lobortis odio praesent nec, eget eu platea inceptos accumsan per, ligula penatibus hac porttitor sociis nam.
+						</p>
+					</div>
+					<div class="col">
+						<i class="fas fa-mobile"></i>
+						<p>
+							Vehicula morbi faucibus volutpat id augue conubia maecenas senectus, ac viverra ullamcorper massa consequat aliquet iaculis.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- CHARTS -->
+		<div class="row justify-content-center" id="charts">
+			<div class="col-12 col-lg-3 d-lg-flex align-items-center animated start-animation" data-anim="slideInUp" id="circleContainer">
+				<h5>Average usage</h5>
+				<div>
+					<canvas id="circleChart" width="150" height="150"></canvas>
+					<p class="text-muted text-center">
+						Estimated usage rate today
+						<b class="h5 d-block font-weight-bold">17.2k uses</b>
+						<small>Laoreet sociosqu ac ut fermentum rutrum proin ligula quisque nullam. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras.</small>
+					</p>
+
+					<div class="row text-center">
+						<div class="col">
+							<div class="text-muted">Target</div>
+							<i class="fas fa-arrow-down"></i> 8.6k
+						</div>
+						<div class="col">
+							<div class="text-muted">Week</div>
+							<i class="fas fa-arrow-up"></i> 4.3k
+						</div>
+						<div class="col">
+							<div class="text-muted">Month</div>
+							<i class="fas fa-arrow-down"></i> 1.1k
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg-7 animated start-animation" data-anim="slideInUp" id="barContainer">
+				<canvas id="barChart" height="100%"></canvas>
+			</div>
+		</div>
+
+
+		<!-- MAP -->
+		<div class="row" id="maps">
+			<div class="col-12 offset-lg-1 col-lg-5 d-lg-flex align-items-center animated start-animation" data-anim="fadeInLeftBig">
+				<div id="find-store">
+					<h2>Find your nearest store</h2>
+					<ul class="list-group">
+						<li class="list-group-item">
+							12 Atterbury Street 
+							<small class="text-muted d-block">London SW1P 4EA, United Kingdom</small>
+						</li>
+						<li class="list-group-item">
+							141 Kennington Road
+							<small class="text-muted d-block">London SE11 6SF, United Kingdom</small>
+						</li>
+						<li class="list-group-item">
+							25 Floral Court
+							<small class="text-muted d-block">London WC2E 9TD, United Kingdom</small>
+						</li>
+						<li class="list-group-item">
+							3 Lambeth Palace Road
+							<small class="text-muted d-block">London SE1 7EQ, United Kingdom</small>
+						</li>
+						<li class="list-group-item">
+							12 Broadwall
+							<small class="text-muted d-block">London SE1 9QE, United Kingdom</small>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-12 col-lg-6 animated start-animation" data-anim="fadeInRightBig" style="padding: 0">
+				<div id="map"></div>
+			</div>
+		</div>
+
+		<!-- CONTACT -->
+		<div class="row justify-content-center" id="contact">
+			<div class="col-12 text-center">
+				<h2>Get in touch</h2>
+			</div>
+			<div class="col-12 col-lg-5 animated start-animation" data-anim="slideInUp" id="form">
+				<form id="contact-form" type="POST" action="#">
+					<input type="text" class="form-control" placeholder="Your name" required="required">
+					<input type="email" class="form-control" placeholder="Your email" required="required">
+					<textarea class="form-control" placeholder="Your message" required="required"></textarea>
+					<button type="submit" class="btn btn-primary btn-block">Send</button>
+				</form>
+			</div>
+		</div>
+		<div class="row justify-content-center" id="contact-info">
+			<div class="col-4 col-md-3 text-center">
+				<i class="fas fa-phone"></i>
+				707-984-8210<br>
+				Fax: 264-629-3201
+			</div>
+			<div class="col-4 col-md-3 text-center">
+				<i class="fas fa-at"></i>
+				info@ourstore.com<br>
+				ourproduct@ourstore.com
+			</div>
+			<div class="col-4 col-md-3 text-center">
+				<i class="fas fa-map-marker-alt"></i>
+				21 High Crossing Hill<br>
+				London, United Kingdom
+			</div>
+		</div>
+
+		<!-- FOOTER -->
+		<footer class="row" id="footer">
+			<div class="col-6">
+				<img src="static/img/logo.png" id="footer-logo">
+				<h4>Up and above</h4>
+				Providing the best
+			</div>
+			<div class="col-6 text-right">
+				<a href="mailto:info@ourstore.com" data-toggle="tooltip" title="Email"><i class="fas fa-at"></i></a> 
+				<a href="#" data-toggle="tooltip" title="Facebook"><i class="fab fa-facebook-f"></i></a> 
+				<a href="#" data-toggle="tooltip" title="Twitter"><i class="fab fa-twitter"></i></a> 
+				<a href="#" data-toggle="tooltip" title="Instagram"><i class="fab fa-instagram"></i></a>
+				<span class="d-block">© Copyright 2019 | All Rights Reserved</span>
+			</div>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="static/js/script.js"></script>
+</body>
+</html>
